@@ -1,0 +1,407 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+nav.navbar {
+    position: fixed;
+    width: 96%;
+    left: 2%;
+    top: 0;
+    z-index: 30;
+    right: 50%;
+    margin: auto;
+    border-radius: 0;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 13px 23px;
+}
+.buttons .btn {
+    margin: 0 4px;
+    border-radius: 10px;
+}
+.buttons {
+    margin-left: auto;
+}
+.all-Posts {
+    width: 75%;
+    margin: 90px auto 0;
+    max-width: 1200px;
+}
+.all-Posts .card {
+    border: 1px solid rgb(227 227 227);
+    border-radius: 12px;
+    margin: 10px 0;
+}
+.all-Posts .card .card-header {
+    background: white;
+    border-top-left-radius: 23px;
+    padding: 10px 25px;
+    border-top-right-radius: 23px;
+    align-content: center;
+    align-items: center;
+}
+span.img-user img {
+
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    margin: -2px 0;
+    border: 1px solid #dfb0b0;
+    cursor: pointer;
+
+}   
+h5.user-name {
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 0 !important;
+}
+.card-body .img-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.img-card h6.time-post {
+    padding: 5px 13px;
+    font-size: 13px;
+    color: rgb(193 , 193 , 193);
+}
+.card-footer {
+    background: white !important;
+    border-bottom-right-radius: 13px !important;
+    border-bottom-left-radius: 13px !important;
+    padding: 10px 35px !important;
+}
+.card-footer p {
+    display: inline-block;
+    margin: 5px 0;
+}
+div#liveAlertPlaceholder {
+    z-index: 1100;
+    position: fixed;
+    width: 37%;
+    margin: auto;
+    bottom: 0;
+    right: 10px;
+}
+.btn-tags {
+    border-radius: 20px !important;
+    font-size: 11px !important;
+    margin: 0px 3px !important;
+}
+.add-post {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    z-index: 10;
+}
+button#add-post {
+    font-size: 32px;
+    border: 0;
+    padding: 12px 10px;
+    padding-bottom: 19px;
+    text-align: center;
+    border-radius: 50%;
+    background: blue;
+    color: white;
+
+    display: flex;
+    width: 50px;
+    height: 50px;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+.title-post {
+    margin: 120px 20px 40px;
+}
+textarea#post-body-input {
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #cfd4da;
+    min-height: 98px;
+    font-size: 15px;
+    padding: 4px 6px;
+}
+span#profile-sign-in img {
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    margin: -2px 0;
+    border: 1px solid #dfb0b0;
+    cursor: pointer;
+    display: inline-block;
+}
+.all-Posts .card .card-body {
+    cursor: pointer;
+}
+.user-Commints {
+    padding: 20px 20px 3px;
+    margin: 20px 0;
+    border: 1px solid #e3e3e3;
+    border-radius: 10px;
+}
+.user-Commints .card-header {
+    padding: 10px 0 15px;
+}
+.user-Commints p.card-text {
+    margin: 0px 0 8px;
+}
+.user-Commints h6.time-post {
+    padding: 5px 13px;
+    font-size: 13px;
+    color: rgb(193 , 193 , 193);
+}
+.all-Posts-dithgls , 
+.all-posts-user-profile {
+    width: 75%;
+    margin: 90px auto 0;
+    max-width: 1200PX;
+}
+.all-Posts-dithgls .card.item {
+    border: 1px solid rgb(227 227 227);
+    border-radius: 12px;
+    margin: 10px 0;
+}
+div#add-comment-div {
+    margin: 20px 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+}
+div#add-comment-div input#comment-input {
+    display: inline-block;
+    position: relative;
+    top: -9px;
+    margin-right: 7px;
+    width: 60%;
+    border: 0px solid transparent;
+    transition: .3s all ease-in-out;
+    outline: 0;
+    padding: 7px 7px 7px;
+    border-radius: 1px;
+    border-bottom: 2px solid #e3e3e3;
+}
+div#add-comment-div input#comment-input:hover, div#add-comment-div input#comment-input:focus-visible {
+    border-bottom: 2px solid #403333;
+}
+div#add-comment-div button.d-inline-block.btn.btn-outline-dark {
+    margin: 5px 3px 0;
+}
+div#Edit-and-remove {
+    float: right;
+}
+div#delete-post-modal {
+    text-align: center;
+}
+
+.svg.dliete.post {
+    text-align: center;
+    margin: 20px;
+}
+.svg.dliete.post svg {
+    width: 130px;
+    height: 130px;
+    color: red;
+}
+p#post-model-title {
+    margin: 15px 0;
+}
+
+
+
+header.head.name  {
+    margin: 90px auto 40px auto;
+    display: grid;
+    grid-template-columns: auto auto auto 20%;
+    gap: 10px;
+    background: white;
+    overflow: auto;
+    width: 88%;
+    box-shadow: 0 0 20px #00000012;
+    padding: 30px 26px;
+    border-radius: 10px;
+    height: 220px;
+
+}
+.card.item.mb-3 {
+    outline: 0;
+    border: 0;
+    gap: 10px;
+    background: white;
+    overflow: auto;
+    box-shadow: 0 0 20px #00000012;
+}
+.card.item.mb-3 .card-header {
+    background: white;
+}
+.posts-and-Commdent {
+    display: grid;
+    align-content: center;
+}
+.name-profile {
+    display: grid;
+    align-items: center;
+}
+.profile-image {
+    display: grid;
+    justify-content: center;
+}
+.profile-image img {
+    width: 120px;
+    border-radius: 50%;
+}
+.name-profile p {
+    font-size: 15px;
+}
+.posts-and-Commdent.posts-and-Commdent span {
+    FONT-WEIGHT: 100;
+    font-size: 12px;
+    color: rgb(172,172,172);
+}
+@media screen and (max-width:550px) and (max-width:418px) {
+    header.head.name {
+        padding: 30px 1px;
+    }
+   
+}
+@media screen and (max-width:450px) {
+    header.head.name {
+        padding: 30px 1px;
+        height: auto;
+    margin: 90px 10px 40px 10px;
+        display: block;
+    }
+    .all-Posts ,
+    .all-Posts-dithgls , 
+    .all-posts-user-profile {
+        width: 95%;
+    }
+    .name-profile p {
+        font-size: 14px;
+        margin: 0;
+    }
+    .name-profile {
+      text-align: center;
+      margin-top: 10px ;
+    }
+    .posts-and-Commdent {
+        justify-content: center;
+    }
+}
+.head.header {
+    background: white;
+    padding: 40px;
+    overflow: auto;
+    width: 88%;
+    box-shadow: 0 0 20px #00000012;
+    margin: auto;
+    border-radius: 10px;
+}
+canvas#myChart {
+    width: 96% !important;
+    height: auto !important;
+    margin: auto;
+    min-width: 418px;
+    min-height: 209px;
+}
+.card-header h5.user-name {
+    cursor: pointer;
+}
+.nav-item {
+    cursor: pointer;
+}
+
+/* loader css*/
+.lds-ripple {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+#loaderJs {
+    position: fixed;
+    background: #0000004f;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    transition: 1s ease-in-out ;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+    z-index: 1999;
+    align-items: center;
+}
+.lds-ripple div {
+    position: absolute;
+    border: 4px solid #fff;
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+    0% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+    4.9% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+    5% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    100% {
+        top: 0px;
+        left: 0px;
+        width: 72px;
+        height: 72px;
+        opacity: 0;
+    }
+}
+.modal button.close {
+    font-size: 23px;
+    border-radius: 50%;
+    background: transparent;
+    width: 40px;
+    border: 2px solid #768191;
+    height: 40px;
+}
+
+div#Edit-and-remove button.btn {
+    outline: 0;
+    border-radius: 10px;
+    background: #eee;
+    padding: 2px 15px 5px;
+}
+button.btn.Dliete {
+    margin: 0 10px;
+}
+div#Edit-and-remove button.btn svg {
+    width: 20px;
+    height: 20px;
+}
+button.btn.editPost svg {
+    color: #661818;
+}
+button.btn.Dliete svg {
+    color: red;
+}
