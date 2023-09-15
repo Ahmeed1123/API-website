@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>finalTest</title>
+    <link rel="stylesheet" href="asstis/css/style.css">
+    <!-- bootstrab-link -->
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js.map"></script>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
+  </head>
+<body>
+
+
+<!-- moddeiles -->
+<div class="modal fade" id="Login-model" tabindex="-1" role="dialog" aria-bs-labelledby="exampleModalLabel" aria-bs-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-bs-label="Close">
+          <span aria-bs-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Username:</label>
+            <input type="text" class="form-control" id="Username-input">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">password:</label>
+            <input type="password" class="form-control" id="password-input">
+          </div> 
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="loginbutclick()">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="Comments-cuors" type="button" data-bs-toggle="modal" data-bs-target="#Comments-cuors-model" id="Comments-cuorses">
+    <button  class="btn cuors-btn"  >
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
+        <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001z"/>
+      </svg>
+    </button>
+</div>
+
+
+<div class="modal fade" id="Comments-cuors-model" tabindex="-1" role="dialog" aria-bs-labelledby="exampleModalLabel" aria-bs-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Create Comments Cuors</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-bs-label="Close">
+          <span aria-bs-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">name:</label>
+            <input type="text" class="form-control" id="name-evaluation-input">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">text:</label>
+            <input type="text" class="form-control" id="text-evaluation-input">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-dark my-3" onclick="commentPost()">Send</button>
+      </div> 
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="Regster-model" tabindex="-1" role="dialog" aria-bs-labelledby="exampleModalLabel" aria-bs-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Regster a new user</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-bs-label="Close">
+          <span aria-bs-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group mt-3">
+            <label for="recipient-name" class="col-form-label">Image:</label>
+            <input type="file" class="form-control" id="regster-Image-input" value="https://w7.pngwing.com/pngs/831/88/png-transparent-user-profile-computer-icons-user-interface-mystique-miscellaneous-user-interface-design-smile-thumbnail.png">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">name:</label>
+            <input type="text" class="form-control" id="regster-name-input">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Username:</label>
+            <input type="text" class="form-control" id="regster-usrname-input">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">password:</label>
+            <input type="password" class="form-control" id="regster-password-input">
+          </div> 
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" onclick="regsterBtnclicked()">Login</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- moddeiles add-posts -->
+<div class="modal fade" id="add-posts" tabindex="-1" role="dialog" aria-bs-labelledby="exampleModalLabel" aria-bs-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="post-model-title">Create A New Post</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-bs-label="Close">
+          <span aria-bs-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">title:</label>
+            <input type="text" class="form-control" id="post-title-input">
+            <input type="hidden"  id="post-id" value="">
+          </div>
+          <div class="form-group mt-3">
+            <textarea name="" id="post-body-input"></textarea>
+          </div>
+          <div class="form-group mt-3">
+            <label for="recipient-name" class="col-form-label">Image:</label>
+            <input type="file" class="form-control" id="post-image-input">
+          </div>
+         
+      </div>
+      <div class="modal-footer">
+        <button id="post-modal-sub-btn" type="button" class="btn btn-primary" onclick="CreatNewPostClicked()">Create</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- delete Modal -->
+<div class="modal fade" id="delete-post-modal" tabindex="-1" role="dialog" aria-bs-labelledby="exampleModalLabel" aria-bs-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-body">
+          <div class="svg dliete post">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+              <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+            </svg>
+          </div>
+          <p class="modal-title" id="post-model-title">Are you sure want to delete the post ?</p>
+          <div class="btn-all">
+          <button type="button" class="btn post-closed text-danger" data-bs-dismiss="modal">No</button>
+          <button id="post-modal-sub-btn" type="button" class="btn post-closed text-success" onclick="confirmPostDelte()">Yes</button>
+        </div>
+        </div>
+          <input type="hidden" id="delete-post-id-input" value="">
+     
+    </div>
+  </div>
+</div>
+<!-- /moddeiles -->
+
+<!-- Aleerts -->
+<div id="liveAlertPlaceholder" class="show fade"></div>
+
+
+
+   <!-- addpost -->
+   <div class="add-post" id="add-post-user">
+    <button id="add-post" type="button" onclick="addButtonClicked()">+</button>
+  </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-bs-controls="navbarNavDropdown" aria-bs-expanded="true" aria-bs-label="Toggle navigation" >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link active" href="index.html">Home <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="profileCliced()">profile</a>
+            </li>
+
+      
+          </ul>
+          <div class="buttons">
+            <button id="button-login" class="btn btn-outline-success" type="button" data-bs-toggle="modal" data-bs-target="#Login-model">Login</button>
+            <button type="button"id="button-regster" data-bs-toggle="modal" data-bs-target="#Regster-model" class="btn btn-outline-danger">regster</button>
+       </div>
+
+
+       <!-- logout button -->
+       <div class="buttons log-out" id="logout-div">
+        <span id="profile-sign-in"> 
+          <img id="profile-image" src="https://w7.pngwing.com/pngs/831/88/png-transparent-user-profile-computer-icons-user-interface-mystique-miscellaneous-user-interface-design-smile-thumbnail.png" alt="">
+          <b id="userName">@yarob</b>
+        </span>
+       
+        <button onclick="Logout()" type="button"id="logout" class="btn btn-outline-danger">logout</button>
+
+      </div>
+        </div>
+      </nav>
+
+<!-- loader html -->
+<div id="loaderJs">
+    <div class="lds-ripple">
+        <div></div><div></div>
+    </div>
+</div>
+      <div class="all-Posts">
+        
+        <div class="card item">
+
+            <div class="card-header">
+                <span class="img-user"><img src="https://w7.pngwing.com/pngs/831/88/png-transparent-user-profile-computer-icons-user-interface-mystique-miscellaneous-user-interface-design-smile-thumbnail.png" alt=""></span>
+                 <h5 class="user-name">@yarhmm</h5> 
+                </div>
+                
+            <div class="card-body">
+            <div class="img-card">
+                <img src="https://pic.i7lm.com/wp-content/uploads/2019/07/beach-exotic-holiday-248797-780x405.jpg" alt="">
+                <h6 class="time-post">2 min ago</h6>
+            </div>
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            </div>
+                <div class="card-footer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
+                        <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z"/>
+                      </svg>
+                        <span class="commonts-numbar">(1)</span>
+                    <p>commonts</p>
+                </div>            
+          </div>
+
+          <div class="card item">
+
+            <div class="card-header">
+                <span class="img-user"><img src="https://w7.pngwing.com/pngs/831/88/png-transparent-user-profile-computer-icons-user-interface-mystique-miscellaneous-user-interface-design-smile-thumbnail.png" alt=""></span>
+                 <h5 class="user-name">@yarhmm</h5> 
+                </div>
+                
+            <div class="card-body">
+            <div class="img-card">
+                <img src="https://pic.i7lm.com/wp-content/uploads/2019/07/beach-exotic-holiday-248797-780x405.jpg" alt="">
+                <h6 class="time-post">2 min ago</h6>
+            </div>
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            </div>
+                <div class="card-footer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
+                        <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z"></path>
+                      </svg>
+                        <span class="commonts-numbar">(1)</span>
+                    <p>commonts</p>
+                </div>            
+          </div>
+
+  
+       
+
+
+                
+
+
+          
+
+      </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+<script src="asstis/js/main.js"></script>
+<script src="asstis/js/commets.js"></script>
+<script src="asstis/js/js-bootstrab/bootstrap.min.js"></script>
+<script src="asstis/js/indexLogic.js"></script>
+<script src="asstis/js/all.min.js"></script>
+
+</html>
