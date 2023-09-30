@@ -20,6 +20,11 @@ nav.navbar {
     margin: 0 4px;
     border-radius: 10px;
 }
+
+div#comments-5 {
+    width: 90%;
+    margin: 140px auto;
+}
 .buttons {
     margin-left: auto;
 }
@@ -404,4 +409,16 @@ button.btn.editPost svg {
 }
 button.btn.Dliete svg {
     color: red;
+}
+.Comments-cuors {
+    position: fixed;
+    z-index: 1;
+    right: 17px;
+    bottom: 90px;
+}
+.Comments-cuors button.btn.cuors-btn {
+    font-size: 11px;
+    width: 40px;
+    background: #eeeeee;
+    color: #332323;
 }
