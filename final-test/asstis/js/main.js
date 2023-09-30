@@ -121,6 +121,8 @@ function loginbutclick() {
     axios.post(url , params)
     .then((resonse) => {
         localStorage.setItem("token",resonse.data.token)
+        console.log(resonse.data)
+        console.log(resonse.data.user)
         localStorage.setItem("user",JSON.stringify(resonse.data.user))
         let modal =  document.getElementById("Login-model")
       let modelInstes =  bootstrap.Modal.getInstance(modal)
@@ -214,7 +216,6 @@ const appendAlert = (messagee, type) => {
     let buttonlog = document.getElementById("button-login");
     let buttonrg = document.getElementById("button-regster");
     let logoutbtn = document.getElementById("logout");
-    let divCommentsAdd = document.getElementById("add-comment-div");
 
     let addpostbtn = document.getElementById("add-post-user");
     if(token == null) {
